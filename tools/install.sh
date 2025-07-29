@@ -84,6 +84,7 @@ main() {
     fi
     if [[ "$(is_redos)" = "2" ]]; then
         CN_INSTALL_CS="2"
+    fi
     if [[ "${CN_INSTALL_CS}" = "1" ]]; then
         msg "Installing with camera-streamer ...\n"
         link_pkglist_rpi
@@ -193,10 +194,7 @@ main() {
     if [[ "${CROWSNEST_UNATTENDED}" = "1" ]]; then
         unattended_success_msg
     fi
-
-
     unset DEBIAN_FRONTEND
 }
-
 main "${@}"
 exit 0
