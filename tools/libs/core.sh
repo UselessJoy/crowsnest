@@ -114,6 +114,9 @@ link_pkglist_redos() {
 }
 
 run_apt_update() {
+    if [[ "$PKG_MANAGER" == "dnf" ]]; then
+        return
+    fi
     update_cmd="sudo $PKG_MANAGER update"
     if [[ "$PKG_MANAGER" == "apt" ]]; then
         update_cmd+=" --allow-releaseinfo-change"
